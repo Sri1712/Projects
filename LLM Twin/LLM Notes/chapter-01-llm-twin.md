@@ -182,26 +182,24 @@ subgraph FP["Feature Pipeline"]
     A3 --> CLEAN
     CLEAN --> CHUNK
     CHUNK --> EMBED
+
+    %% Logical Feature Store (inside Feature Pipeline)
+    subgraph LFS["Logical Feature Store"]
+        IDS[(Instruct Dataset)]
+        VDB[(Vector DB)]
+        RC[Retrieval Client]
+
+        IDS --- VDB
+        RC --> VDB
+    end
+
+    EMBED --> IDS
+    EMBED --> VDB
 end
 
 DW --> A1
 DW --> A2
 DW --> A3
-
-%% --------------------
-%% Logical Feature Store
-%% --------------------
-subgraph LFS["Logical Feature Store"]
-    IDS[(Instruct Dataset)]
-    VDB[(Vector DB)]
-    RC[Retrieval Client]
-
-    IDS --- VDB
-    RC --> VDB
-end
-
-EMBED --> IDS
-EMBED --> VDB
 
 %% --------------------
 %% Training Pipeline
