@@ -8,6 +8,7 @@ Paul Iusztin & Maxime Labonne
 These are my personal study notes and summaries.  
 All concepts, diagrams, and ideas belong to the original authors.
 
+---
 
 ### What is an LLM Twin?
 
