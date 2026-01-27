@@ -147,22 +147,100 @@ The final thing you must understand about the FTI pattern is that the system doe
 ## LLM Twin Architecture (FTI Pattern)
 
 flowchart LR
-    A[Data Sources<br/>Medium · Substack · LinkedIn · GitHub] --> B[Data Collection Pipeline]
-    B --> C[NoSQL Data Warehouse]
 
-    C --> D[Feature Pipeline<br/>Clean · Chunk · Embed]
-    D --> E[Vector DB<br/>Logical Feature Store]
-    D --> F[Instruction Dataset Artifacts]
+%% --------------------
+%% Data Collection Pipeline
+%% --------------------
+subgraph DCP["Data Collection Pipeline"]
+    DS1[Medium]
+    DS2[LinkedIn]
+    DS3[GitHub]
+    ETL[ETL]
+    DW[(NoSQL DB)]
 
-    F --> G[Training Pipeline]
-    G --> H[Model Registry]
+    DS1 --> ETL
+    DS2 --> ETL
+    DS3 --> ETL
+    ETL --> DW
+end
 
-    H --> I[Inference Pipeline]
-    E --> I
+%% --------------------
+%% Feature Pipeline
+%% --------------------
+subgraph FP["Feature Pipeline"]
+    A1[Articles]
+    A2[Posts]
+    A3[Code]
 
-    I --> J[REST API]
-    I --> K[Prompt Monitoring]
-    
+    CLEAN[Clean]
+    CHUNK[Chunk]
+    EMBED[Embed]
+
+    A1 --> CLEAN
+    A2 --> CLEAN
+    A3 --> CLEAN
+    CLEAN --> CHUNK
+    CHUNK --> EMBED
+end
+
+DW --> A1
+DW --> A2
+DW --> A3
+
+%% --------------------
+%% Logical Feature Store
+%% --------------------
+subgraph LFS["Logical Feature Store"]
+    IDS[(Instruct Dataset)]
+    VDB[(Vector DB)]
+    RC[Retrieval Client]
+
+    IDS --- VDB
+    RC --> VDB
+end
+
+EMBED --> IDS
+EMBED --> VDB
+
+%% --------------------
+%% Training Pipeline
+%% --------------------
+subgraph TP["Training Pipeline"]
+    FT[LLM Fine-tuning]
+    EXP[Experiment Tracker]
+    TEST[Test LLM Candidate]
+end
+
+IDS -->|Fine-tuning Data| FT
+FT --> TEST
+FT --> EXP
+
+%% --------------------
+%% Model Registry
+%% --------------------
+MR[(Model Registry)]
+TEST -->|LLM Production Candidate| MR
+
+%% --------------------
+%% Inference Pipeline
+%% --------------------
+subgraph IP["Inference Pipeline"]
+    DEPLOY[Deploy]
+    LLM[LLM Twin]
+    RC2[Retrieval Client]
+    API[REST API]
+    MON[Prompt & System Monitoring]
+end
+
+MR -->|Accepted LLM| DEPLOY
+DEPLOY --> LLM
+
+VDB -->|RAG Data| RC2
+RC2 --> LLM
+
+LLM --> API
+LLM --> MON
+
 
 ### Data Collection Pipeline
 
