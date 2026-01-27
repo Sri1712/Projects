@@ -146,7 +146,6 @@ The final thing you must understand about the FTI pattern is that the system doe
 
 ## LLM Twin Architecture (FTI Pattern)
 
-```mermaid
 flowchart LR
     A[Data Sources<br/>Medium · Substack · LinkedIn · GitHub] --> B[Data Collection Pipeline]
     B --> C[NoSQL Data Warehouse]
@@ -163,6 +162,7 @@ flowchart LR
 
     I --> J[REST API]
     I --> K[Prompt Monitoring]
+    
 
 ### Data Collection Pipeline
 
