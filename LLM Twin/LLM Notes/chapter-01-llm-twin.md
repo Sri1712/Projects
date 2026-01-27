@@ -146,6 +146,7 @@ The final thing you must understand about the FTI pattern is that the system doe
 
 ## LLM Twin Architecture (FTI Pattern)
 
+```mermaid
 flowchart LR
 
 %% --------------------
@@ -240,7 +241,7 @@ RC2 --> LLM
 
 LLM --> API
 LLM --> MON
-
+```
 
 ### Data Collection Pipeline
 
