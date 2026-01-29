@@ -5,3 +5,5 @@ It allows you to create beautiful web applications for your machine learning and
 
 
 python -m pip install -r requirements.txt
+conda create -p venv1 python==3.13
+conda activate venv1/
