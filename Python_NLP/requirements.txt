@@ -4,4 +4,3 @@ numpy
 matplotlib
 streamlit
 scikit-learn
-nltk
