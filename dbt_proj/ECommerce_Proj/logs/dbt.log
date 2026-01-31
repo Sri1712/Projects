@@ -1,0 +1,32 @@
+[0m11:09:35.717097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016CDDF5CC20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016CDF0CFED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016CDF0CFB10>]}
+
+
+============================== 11:09:35.721254 | e36ebb20-41fb-462f-9588-9c237a85d529 ==============================
+[0m11:09:35.721254 [info ] [MainThread]: Running with dbt=1.11.2
+[0m11:09:35.721853 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Srilathaa Vasu\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init my_ecom_proj', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m11:09:35.742894 [debug] [MainThread]: Starter project path: D:\Projects\Projects\dbt_proj\ECommerce_Proj\ecomm_env\Lib\site-packages\dbt\include\starter_project
+[0m11:09:35.762408 [info ] [MainThread]: 
+Your new dbt project "my_ecom_proj" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:09:35.763182 [info ] [MainThread]: Setting up your profile.
+[0m11:09:40.626676 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m11:09:40.627128 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m11:09:40.627448 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m11:16:27.492721 [info ] [MainThread]: Profile my_ecom_proj written to C:\Users\Srilathaa Vasu\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m11:16:27.494390 [debug] [MainThread]: Command `dbt init` succeeded at 11:16:27.494262 after 411.91 seconds
+[0m11:16:27.494764 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C8396CE90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016CFFBB83B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000016C8392D260>]}
+[0m11:16:27.495156 [debug] [MainThread]: Flushing usage events
+[0m11:16:28.184823 [debug] [MainThread]: An error was encountered while trying to flush usage events
