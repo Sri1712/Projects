@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: delayed_orders
+    tests:
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "delayed_days > 0"
