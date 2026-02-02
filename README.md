@@ -1,4 +1,4 @@
-# Srilathaa Vasu 
+# <align="center"> Srilathaa Vasu 
 ### ✨ Data Scientist & AI Enthusiast 
 
 Data professional focused on building practical **Machine Learning, NLP, Deep Learning and AI-driven solutions** that transform data into meaningful business impact.
