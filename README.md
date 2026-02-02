@@ -30,7 +30,7 @@ This repository contains:
 - Scalable data & AI systems
 
 ## 📬 Connect
-LinkedIn: www.linkedin.com/in/srilathaa-vasu 
+LinkedIn: www.linkedin.com/in/srilathaa-vasu <br>
 Email: sri1712lathaa@gmail.com
 
 ---
